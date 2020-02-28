@@ -1,267 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Tailwind CSS Mega Menu</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
-  <style>
-
-  /* ––––––––––––––––––––––––––––––––––––––––––––––––––
-    Based on: https://codepen.io/nickelse/pen/YGPJQG
-    Influenced by: https://sproutsocial.com/
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-
-  /* #Mega Menu Styles
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .mega-menu {
-    display: none;
-    left: 0;
-    position: absolute;
-    text-align: left;
-    width: 100%;
-  }
-
-
-
-  /* #hoverable Class Styles
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .hoverable {
-    position: static;
-  }
-
-  .hoverable > a:after {
-    content: "\25BC";
-    font-size: 10px;
-    padding-left: 6px;
-    position: relative;
-    top: -1px;
-  }
-
-  .hoverable:hover .mega-menu {
-    display: block;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href=https://stitches.hyperyolo.com/output.css rel="stylesheet">
+    <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.6.3/css/all.css integrity=sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/ crossorigin="anonymous">
+    <title>Stitches</title>
+  </head>
+  <body><nav class="font-sans bg-white text-center flex justify-between items-center my-4 mx-auto container overflow-hidden">
+  <a href="#">
+    <img src="https://stitches.hyperyolo.com/images/logo.png" class="h-10" alt="logo">
+  </a>
+  <ul class="text-sm text-gray-700 list-none p-0 flex items-center">
+    <li><a href="#" class="inline-block py-2 px-3 text-gray-900 hover:text-gray-700 no-underline">Products</a></li>
+    <li><a href="#" class="inline-block py-2 px-3 text-gray-900 hover:text-gray-700 no-underline">Pricing</a></li>
+    <li><a href="#" class="inline-block py-2 px-3 text-gray-900 hover:text-gray-700 no-underline">About Us</a></li>
+    <li><a href="#" class="inline-block py-2 px-3 text-gray-900 hover:text-gray-700 no-underline">Status</a></li>
+  </ul>
+  <ul class="text-sm text-gray-700 list-none p-0 flex items-center">
+    <li><a href="#" class="inline-block py-2 px-3 text-gray-900 hover:text-gray-700 no-underline">Log In</a></li>
+    <li>
+      <button class="bg-black hover:bg-text-gray-800 text-white ml-4 py-2 px-3">
+        Sign Up
+      </button>
+    </li>
+  </ul>
+</nav>
 
 
-  /* #toggle Class Styles
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-  .toggleable > label:after {
-    content: "\25BC";
-    font-size: 10px;
-    padding-left: 6px;
-    position: relative;
-    top: -1px;
-  }
-
-  .toggle-input {
-    display: none;
-  }
-  .toggle-input:not(checked) ~ .mega-menu {
-    display: none;
-  }
-
-  .toggle-input:checked ~ .mega-menu {
-    display: block;
-  }
-
-  .toggle-input:checked + label {
-    color: white;
-    background: #2c5282; /*@apply bg-blue-800 */
-  }
-
-  .toggle-input:checked ~ label:after {
-    content: "\25B2";
-    font-size: 10px;
-    padding-left: 6px;
-    position: relative;
-    top: -1px;
-  }
-
-  </style>
-</head>
-
-<body class="bg-gray-200 font-sans leading-normal tracking-normal">
-<nav class="relative bg-white border-b-2 border-gray-300 text-gray-900">
-  <div class="container mx-auto flex justify-between">
-    <div class="relative block p-4 lg:p-6 text-xl text-blue-600 font-bold">Logo</div>
-    <ul class="flex">
-	
-      <!--Regular Link-->
-      <li class="hover:bg-blue-800 hover:text-white">
-        <a href="#" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">Normal</a>
-      </li>
-	  
-      <!--Toggleable Link-->
-      <li class="toggleable hover:bg-blue-800 hover:text-white">
-        <input type="checkbox" value="selected" id="toggle-one" class="toggle-input">
-          <label for="toggle-one" class="block cursor-pointer py-6 px-4 lg:p-6 text-sm lg:text-base font-bold">Click</label>
-          <div role="toggle" class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
-            <div class="container mx-auto w-full flex flex-wrap justify-between mx-2">
-              <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                <h3 class="font-bold text-xl text-white text-bold mb-2">Heading 1</h3>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-              </ul>
-              <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                <h3 class="font-bold text-xl text-white text-bold mb-2">Heading 2</h3>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-              </ul>
-              <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-b-0 sm:border-r md:border-b-0 pb-6 pt-6 lg:pt-3">
-                <h3 class="font-bold text-xl text-white text-bold">Heading 3</h3>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-                <li>
-                  <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Category One Sublink</a>
-                </li>
-              </ul>
-              <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
-                <h3 class="font-bold text-xl text-white text-bold mb-2">Heading 4</h3>
-                <li class="pt-3">
-                  <img src="https://placehold.it/205x172">
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
-		  
-          <!-- ## Toggleable Link Template ##
-      
-		  <li class="toggleable"><input type="checkbox" value="selected" id="toggle-xxx" class="toggle-input"><label for="toggle-xxx" class="cursor-pointer">Click</label><div role="toggle" class="mega-menu">
-			Add your mega menu content
-			</div></li>
-		  
-		  -->
-		  
-          <!--Hoverable Link-->
-          <li class="hoverable hover:bg-blue-800 hover:text-white">
-            <a href="#" class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold hover:bg-blue-800 hover:text-white">Hover</a>
-            <div class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
-              <div class="container mx-auto w-full flex flex-wrap justify-between mx-2">
-                <div class="w-full text-white mb-8">
-                  <h2 class="font-bold text-2xl">Main Hero Message for the menu section</h2>
-                  <p>Sub-hero message, not too long and not too short. Make it just right!</p>
-                </div>
-                <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                  <div class="flex items-center">
-                    <svg class="h-8 mb-3 mr-3 fill-current text-white"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M3 6c0-1.1.9-2 2-2h8l4-4h2v16h-2l-4-4H5a2 2 0 0 1-2-2H1V6h2zm8 9v5H8l-1.67-5H5v-2h8v2h-2z"/>
-                    </svg>
-                    <h3 class="font-bold text-xl text-white text-bold mb-2">Heading 1</h3>
-                  </div>
-                  <p class="text-gray-100 text-sm">Quarterly sales are at an all-time low create spaces to explore the accountable talk and blind vampires.</p>
-                  <div class="flex items-center py-3">
-                    <svg class="h-6 pr-3 fill-current text-blue-300"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/>
-                    </svg>
-                    <a href="#" class="text-white bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
-                  </div>
-                </ul>
-                <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-                  <div class="flex items-center">
-                    <svg class="h-8 mb-3 mr-3 fill-current text-white"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M4.13 12H4a2 2 0 1 0 1.8 1.11L7.86 10a2.03 2.03 0 0 0 .65-.07l1.55 1.55a2 2 0 1 0 3.72-.37L15.87 8H16a2 2 0 1 0-1.8-1.11L12.14 10a2.03 2.03 0 0 0-.65.07L9.93 8.52a2 2 0 1 0-3.72.37L4.13 12zM0 4c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z"/>
-                    </svg>
-                    <h3 class="font-bold text-xl text-white text-bold mb-2">Heading 2</h3>
-                  </div>
-                  <p class="text-gray-100 text-sm">Prioritize these line items game-plan draw a line in the sand come up with something buzzworthy UX upstream selling.</p>
-                  <div class="flex items-center py-3">
-                    <svg class="h-6 pr-3 fill-current text-blue-300"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/>
-                    </svg>
-                    <a href="#" class="text-white bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
-                  </div>
-                </ul>
-                <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-b-0 sm:border-r md:border-b-0 pb-6 pt-6 lg:pt-3">
-                  <div class="flex items-center">
-                    <svg class="h-8 mb-3 mr-3 fill-current text-white"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M2 4v14h14v-6l2-2v10H0V2h10L8 4H2zm10.3-.3l4 4L8 16H4v-4l8.3-8.3zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"/>
-                    </svg>
-                    <h3 class="font-bold text-xl text-white text-bold mb-2">Heading 3</h3>
-                  </div>
-                  <p class="text-gray-100 text-sm">This proposal is a win-win situation which will cause a stellar paradigm shift, let's touch base off-line before we fire the new ux experience.</p>
-                  <div class="flex items-center py-3">
-                    <svg class="h-6 pr-3 fill-current text-blue-300"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/>
-                    </svg>
-                    <a href="#" class="text-white bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
-                  </div>
-                </ul>
-                <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
-                  <div class="flex items-center">
-                    <svg class="h-8 mb-3 mr-3 fill-current text-white"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z"/>
-                    </svg>
-                    <h3 class="font-bold text-xl text-white text-bold mb-2">Heading 4</h3>
-                  </div>
-                  <p class="text-gray-100 text-sm">This is a no-brainer to wash your face, or we need to future-proof this high performance keywords granularity.</p>
-                  <div class="flex items-center py-3">
-                    <svg class="h-6 pr-3 fill-current text-blue-300"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/>
-                    </svg>
-                    <a href="#" class="text-white bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
-                  </div>
-                </ul>
-              </div>
-            </div>
-          </li>
-		  
-          <!-- ## Hoverable Link Template ##
-      
-		  <li class="hoverable hover:bg-blue-800 hover:text-white"><a href="#" class="relative block">x</a><div class="mega-menu">
-			Add your mega menu content
-			</div></li>
-		  
-		  -->
-        </ul>
-      </div>
-    </nav>
-  </body>
-  <!DOCTYPE html>
+ 
 
 		<style>
 			.carousel-open:checked + .carousel-item {
@@ -295,7 +66,6 @@
 			}
 		</style>
 
-</head>
 
 <body class="bg-white font-sans leading-normal tracking-normal">
 
@@ -342,4 +112,96 @@
 </div>
 
 
+
+
+
+
+
+<section class="my-8 font-sans container m-auto max-w-xl ">
+  <div class="text-center">
+    <h1 class="my-4 font-medium">Show Your Work</h1>
+    <p class="leading-normal mb-4 max-w-sm m-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+  <div class="flex flex-col sm:flex-row flex-wrap my-8">
+    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 border-gray-300 border-r border-b hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
+      <div class="w-12 h-12 rounded-full bg-gray-300" alt=""></div>
+      <h3 class="mt-4 mb-1">Digital</h3>
+      <p class="mt-4 text-center text-gray-700 leading-normal px-6 hidden hover:block">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  border-gray-300 border-r border-b hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
+      <div class="w-12 h-12 rounded-full bg-gray-300" alt=""></div>
+      <h3 class="mt-4 mb-1">Branding</h3>
+      <p class="mt-4 text-center text-gray-700 leading-normal hidden hover:block">Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.</p>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  border-gray-300 border-b hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
+      <div class="w-12 h-12 rounded-full bg-gray-300" alt=""></div>
+      <h3 class="mt-4 mb-1">Excellence</h3>
+      <p class="mt-4 text-center text-gray-700 leading-normal hidden hover:block">Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.</p>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  border-gray-300 border-r hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
+      <div class="w-12 h-12 rounded-full bg-gray-300" alt=""></div>
+      <h3 class="mt-4 mb-1">Strategy</h3>
+      <p class="mt-4 text-center text-gray-700 leading-normal hidden hover:block">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  border-gray-300 border-r hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
+      <div class="w-12 h-12 rounded-full bg-gray-300" alt=""></div>
+      <h3 class="mt-4 mb-1">Design</h3>
+      <p class="mt-4 text-center text-gray-700 leading-normal hidden hover:block">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+    </div>
+    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8 border-gray-300  hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
+      <div class="w-12 h-12 rounded-full bg-gray-300" alt=""></div>
+      <h3 class="mt-4 mb-1">Development</h3>
+      <p class="mt-4 text-center text-gray-700 leading-normal hidden hover:block">Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. </p>
+    </div>
+  </div>
+</section><section class="font-sans text-center my-8 px-8">
+  <h1 class="capitalize font-medium">Ready to get started?</h1>
+  <p class="text-gray-700 mt-2 mb-6">But I must explain to you how all this mistaken idea of denouncing </p>
+  <button class="bg-black hover:bg-gray-900 text-white hover:text-white py-3 px-6 uppercase text-xs tracking-wide">Learn More</button>
+</section><footer class="font-sans bg-black text-white py-8 px-4">
+  <div class="mx-auto container overflow-hidden flex flex-col lg:flex-row justify-between">
+    <a href="/" class="block mr-4 w-1/2">
+      <img src="https://stitches.hyperyolo.com/images/logo-white.png" class="w-32" alt="logo">
+    </a>
+    <div class="w-1/2 flex text-sm mt-6 lg:mt-0">
+      <ul class="text-gray-700 list-none p-0 font-thin flex flex-col text-left">
+        <li class="inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide">Product</li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Popular</a></li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Trending</a></li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Catalog</a></li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Features</a></li>
+      </ul>
+      <ul class="text-gray-700 list-none p-0 font-thin flex flex-col text-left">
+        <li class="inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide">Company</li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Press Release</a>
+        </li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Mission</a></li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Strategy</a></li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Works</a></li>
+      </ul>
+      <ul class="text-gray-700 list-none p-0 font-thin flex flex-col text-left">
+        <li class="inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide">Info</li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Support</a></li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Developers</a></li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Customer
+            Services</a></li>
+        <li><a href="#" class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Started Guide</a>
+        </li>
+      </ul>
+      <div class="text-gray-700 flex flex-col">
+        <div class="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">Follow Us</div>
+        <div class="flex pl-4 justify-start">
+          <a class="block flex items-center text-white hover:text-gray-500 mr-6 no-underline" href="#"><i
+              class="fab fa-github-alt"></i></a>
+          <a class="block flex items-center text-white hover:text-gray-500 mr-6 no-underline" href="#"><i
+              class="fab fa-slack"></i></a>
+          <a class="block flex items-center text-white hover:text-gray-500 no-underline" href="#"><i
+              class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-4 mt-4 text-gray-700 border-t border-gray-900 text-center"> ©2019 Hyperyolo. All rights
+    reserved.</div>
+</footer></body>
 </html>
